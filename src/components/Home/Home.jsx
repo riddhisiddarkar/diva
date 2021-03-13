@@ -12,7 +12,11 @@ const Home = () => {
           <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
           <button className={styles.homepage_button}>Join us</button>
         </div>
-        <img src={homelady} className={styles.homepage_image} />
+        <img
+          src={homelady}
+          className={styles.homepage_image}
+          alt="homepage diva"
+        />
       </div>
     </div>
   );
