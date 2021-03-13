@@ -1,0 +1,20 @@
+.input {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  border: 1px solid var(--themeColor);
+  width: 300px;
+  outline: none;
+}
+
+@media (max-width: 800px) {
+  .input {
+    width: auto;
+  }
+}
+
+@media (max-width: 550px) {
+  .input {
+    width: 230px;
+  }
+}

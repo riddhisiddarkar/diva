@@ -11,7 +11,7 @@ const Login = () => {
         <input type="password" placeholder="Password" />
         <button type="submit">Login</button>
       </form>
-      <img src={loginsvg} className={styles.loginimg} />
+      <img src={loginsvg} className={styles.loginimg} alt="login" />
     </div>
   );
 };

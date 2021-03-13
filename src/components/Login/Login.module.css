@@ -18,10 +18,10 @@
   padding: 10px 20px;
   border-radius: 10px;
   border: none;
-  border: 1px solid #f50057;
+  border: 1px solid var(--themeColor);
 }
 .login > form > button {
-  background-color: #f50057;
+  background-color: var(--themeColor);
   padding: 10px 0px;
   border-radius: 10px;
   color: white;

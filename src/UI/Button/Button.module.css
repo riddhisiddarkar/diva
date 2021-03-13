@@ -1,0 +1,13 @@
+.button {
+  background-color: var(--themeColor);
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: white;
+  border: none;
+  width: fit-content;
+}
+.button:hover {
+  color: var(--themeColor);
+  background-color: white;
+  border: 1px solid var(--themeColor);
+}
