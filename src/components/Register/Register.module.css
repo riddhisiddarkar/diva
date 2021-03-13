@@ -16,7 +16,9 @@
 .register_image {
   width: 300px;
 }
-
+.registertext {
+  color: var(--themeColor);
+}
 @media (max-width: 550px) {
   .register_image {
     display: none;

@@ -15,7 +15,16 @@
   align-items: center;
 }
 .login > form > input {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
+}
+.logintext {
+  color: var(--themeColor);
+}
+@media (max-width: 660px) {
+  .loginaccount {
+    width: 200px;
+    text-align: center;
+  }
 }
 @media (max-width: 550px) {
   .login > img {
