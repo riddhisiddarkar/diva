@@ -14,12 +14,8 @@
 .homepage_image {
   width: 300px;
 }
-.homepage_button {
-  border: none;
-  padding: 10px 20px;
+.homepage_details > button {
   border-radius: 20px;
-  background-color: var(--themeColor);
-  color: white;
   margin-top: 20px;
 }
 

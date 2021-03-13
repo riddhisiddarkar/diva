@@ -5,6 +5,7 @@
   color: white;
   border: none;
   width: fit-content;
+  outline: none;
 }
 .button:hover {
   color: var(--themeColor);
