@@ -1,0 +1,11 @@
+.sidebarsmalleroption {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.sidebarsmalleroption > a {
+  text-decoration: none;
+  color: white;
+  align-self: flex-start;
+  padding: 10px 0px;
+}

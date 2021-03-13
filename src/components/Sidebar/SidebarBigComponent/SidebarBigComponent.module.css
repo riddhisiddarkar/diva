@@ -1,0 +1,15 @@
+.sidebarbigoption {
+  border-bottom: 1px solid white;
+  padding-bottom: 10px;
+  padding-right: 10px;
+}
+.sidebarbigoption > div {
+  display: flex;
+  padding-left: 20px;
+  color: white;
+  align-items: center;
+}
+.sidebarbigoption > div > p {
+  flex: 1;
+  font-weight: 600;
+}
