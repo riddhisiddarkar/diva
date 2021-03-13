@@ -1,0 +1,41 @@
+.homepage {
+}
+.homepage_section {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  padding: 50px;
+  margin-top: 70px;
+  min-height: calc(100vh - 170px);
+  justify-content: space-evenly;
+  align-items: center;
+}
+.homepage_details > h2 {
+  font-size: 50px;
+}
+.homepage_image {
+  width: 300px;
+}
+.homepage_button {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: #f50057;
+  color: white;
+  margin-top: 20px;
+}
+
+@media (max-width: 1040px) {
+  .homepage_details > h2 {
+    font-size: 34px;
+  }
+}
+@media (max-width: 700px) {
+  .homepage_details > h2 {
+    font-size: 25px;
+  }
+  .homepage_section {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+}
