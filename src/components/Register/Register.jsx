@@ -1,16 +1,24 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
 import styles from "./Register.module.css";
 import registerImage from "../../assets/svgs/register.svg";
 import Input from "../../UI/Input/Input";
 import Button from "../../UI/Button/Button";
-import { auth } from "../../firebase";
+import { auth, db } from "../../firebase";
+import { selectUser, login } from "../../features/appSlice";
 
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [cpassword, setCpassword] = useState("");
+  const user = useSelector(selectUser);
+  const dispatch = useDispatch();
+  const history = useHistory();
+  useEffect(() => {
+    if (user) history.push("/");
+  }, [history, user]);
 
   const registeruser = (e) => {
     e.preventDefault();
@@ -20,11 +28,34 @@ const Register = () => {
         .createUserWithEmailAndPassword(email, password)
         .then((res) => {
           console.log(res);
+          const newuserid = Math.round(Math.random() * 100000);
           res.user
             .updateProfile({
-              displayName: `user#${Math.round(Math.random() * 100000)}`,
+              displayName: `user#${newuserid}`,
             })
             .then((r) => {
+              db.collection("users")
+                .doc(res.user.email)
+                .set({
+                  displayName: `user#${newuserid}`,
+                  uid: res.user.uid,
+                })
+                .then(() => {
+                  console.log("Successfully added user to db");
+                  dispatch(
+                    login({
+                      displayName: `user#${newuserid}`,
+                      uid: res.user.uid,
+                      email: res.user.email,
+                    })
+                  );
+                })
+                .catch((err) => {
+                  console.log(
+                    "There is an error here in adding the user to db"
+                  );
+                  console.log(err);
+                });
               console.log("Successfully updated profile");
               console.log(r);
             })

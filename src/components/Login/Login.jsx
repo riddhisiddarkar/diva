@@ -1,15 +1,23 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useHistory } from "react-router-dom";
 
 import styles from "./Login.module.css";
 import loginsvg from "../../assets/svgs/login.svg";
 import Input from "../../UI/Input/Input";
 import Button from "../../UI/Button/Button";
 import { auth } from "../../firebase";
+import { selectUser } from "../../features/appSlice";
+import { useSelector } from "react-redux";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const user = useSelector(selectUser);
+  const history = useHistory();
+
+  useEffect(() => {
+    if (user) history.push("/");
+  }, [history, user]);
 
   const loginuser = (e) => {
     e.preventDefault();
