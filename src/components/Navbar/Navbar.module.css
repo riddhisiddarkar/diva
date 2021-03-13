@@ -3,10 +3,6 @@
   top: -80px;
   z-index: -1;
 }
-.menuicon {
-  color: white;
-  margin: 5px 0px 0px 5px;
-}
 @media (max-width: 1124px) {
   .navbar_bg {
     top: -40px;

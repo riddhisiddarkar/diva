@@ -1,0 +1,11 @@
+.mainapp {
+  display: flex;
+}
+.chatsection {
+  flex: 1;
+}
+@media (max-width: 600px) {
+  .mainapp {
+    flex-direction: column;
+  }
+}

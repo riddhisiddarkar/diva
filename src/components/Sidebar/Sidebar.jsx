@@ -12,7 +12,7 @@ const Sidebar = () => {
         <h2 className={styles.sideapp_name}>App Name</h2>
       </div>
       <div className={styles.sidebar_name_section2}>
-        <p>Username</p>
+        {/* <p>Username</p> */}
       </div>
       <div>
         <SidebarBigComponent

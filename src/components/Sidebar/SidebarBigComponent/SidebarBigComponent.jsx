@@ -7,8 +7,8 @@ import SidebarSmallerOption from "./SidebarSmallerOption/SidebarSmallerOption";
 const SidebarBigComponent = ({ title, data }) => {
   return (
     <div className={styles.sidebarbigoption}>
-      <div>
-        <p>{title} </p> <KeyboardArrowDownIcon />
+      <div className={styles.sidebarbigoption_contianer}>
+        <p>{title} </p> <KeyboardArrowDownIcon className={styles.downarrow} />
       </div>
       <>
         <SidebarSmallerOption data={data} />

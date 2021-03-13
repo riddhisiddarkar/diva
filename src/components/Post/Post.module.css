@@ -1,0 +1,27 @@
+.post {
+  padding: 15px 20px;
+  border: 1px solid whitesmoke;
+  box-shadow: 2px 2px 6px #888888;
+  margin: 20px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  background-color: white;
+  position: relative;
+}
+.chat_icon {
+  color: #ab003c;
+  margin-top: 10px;
+}
+.post > p {
+  font-size: 13px;
+  color: #ab003c;
+}
+.timestamp {
+  position: absolute;
+  bottom: -17px;
+  right: 10px;
+  color: #ab003c !important;
+  font-size: 10px !important;
+}
