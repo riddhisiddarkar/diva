@@ -38,6 +38,10 @@ const Register = () => {
             "There is an error here in creating an account for the user"
           );
           console.log(err);
+          if (err.code === "auth/weak-password")
+            alert("Password should be min of 6 chars");
+          if (err.code === "auth/email-already-in-use")
+            alert("Account already exists");
         });
     }
   };

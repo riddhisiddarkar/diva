@@ -22,6 +22,8 @@ const Login = () => {
       .catch((err) => {
         console.log("There is an error here in signing in the user");
         console.log(err);
+        if (err.code === "auth/user-not-found") alert("Email not registered");
+        if (err.code === "auth/wrong-password") alert("Incorrect password");
       });
   };
 
