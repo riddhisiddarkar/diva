@@ -13,7 +13,15 @@ const Article = ({ article }) => {
     <div className={styles.article}>
       <h6>{article?.data.id}</h6>
       <p>{article?.data.shortdescription}</p>
-      <p className={styles.dateandtime}>12th March 2021</p>
+      <p className={styles.dateandtime}>
+        {" "}
+        {
+          new Date(article?.data?.timestamp?.seconds * 1000)
+            .toUTCString()
+            .split("2021")[0]
+        }
+        2021{" "}
+      </p>
       <div className={styles.claps}>
         <img src={clap} />
         <p>{article?.data.claps}</p>

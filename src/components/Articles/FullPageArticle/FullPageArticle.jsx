@@ -16,7 +16,10 @@ const FullPageArticle = ({ addclap }) => {
       </div>
       <div className={styles.timestamp}>
         <p className={styles.bolder}>Date:</p>
-        <p>Timestamp</p>
+        <p>
+          {" "}
+          {new Date(article?.data?.timestamp?.seconds * 1000).toUTCString()}
+        </p>
       </div>
       <div className={styles.title}>
         <p className={styles.bolder}>Title:</p>

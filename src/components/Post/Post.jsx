@@ -9,7 +9,7 @@ import { addMessage } from "../../features/messageSlice";
 const Post = ({ data }) => {
   const dispatch = useDispatch();
   const history = useHistory();
-
+  //   console.log(data?.data?.timestamp.seconds);
   const enterdiscussion = () => {
     dispatch(
       addMessage({
@@ -28,7 +28,9 @@ const Post = ({ data }) => {
           className={styles.chat_icon}
           onClick={enterdiscussion}
         />
-        <p className={styles.timestamp}>a few moments ago</p>
+        <p className={styles.timestamp}>
+          {new Date(data?.data?.timestamp?.seconds * 1000).toUTCString()}
+        </p>
       </div>
     </>
   );

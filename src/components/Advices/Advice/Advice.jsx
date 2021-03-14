@@ -24,7 +24,10 @@ const Advice = ({ data, like, dislike }) => {
           <p>{data?.data?.dislikes}</p>
         </div>
       </div>
-      <p className={styles.timestamp}>a few moments ago</p>
+      <p className={styles.timestamp}>
+        {" "}
+        {new Date(data?.data?.timestamp?.seconds * 1000).toUTCString()}
+      </p>
     </div>
   );
 };
