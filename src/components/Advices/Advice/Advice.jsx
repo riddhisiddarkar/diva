@@ -1,12 +1,17 @@
 import React from "react";
 import ThumbUpOutlinedIcon from "@material-ui/icons/ThumbUpOutlined";
 import ThumbDownOutlinedIcon from "@material-ui/icons/ThumbDownOutlined";
+import StarRateOutlinedIcon from "@material-ui/icons/StarRateOutlined";
 
 import styles from "./Advice.module.css";
 const Advice = ({ data, like, dislike }) => {
   console.log(data);
   return (
     <div className={styles.advice}>
+      <div className={styles.name}>
+        <p>{data?.data?.user}</p>
+        {data?.data?.verified && <StarRateOutlinedIcon />}
+      </div>
       <p>{data?.data?.comment}</p>
       <div className={styles.advice_like_dislike}>
         <div>

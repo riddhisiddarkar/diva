@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import Articles from "../Articles/Articles";
 import DoctorContacts from "../DoctorContacts/DoctorContacts";
 import KnowYourBody from "../KnowYourBody/KnowYourBody";
+import opinion from "../../assets/svgs/opinion.svg";
 
 const ChatSection = ({ sidebarclose }) => {
   const channel = useSelector(selectChannel);
@@ -61,7 +62,10 @@ const ChatSection = ({ sidebarclose }) => {
         ) : channel?.type == "knowledge" ? (
           <KnowYourBody />
         ) : (
-          <></>
+          <div className={styles.selection}>
+            <img src={opinion} alt="opinion" />
+            <p>Select a channel to start!</p>
+          </div>
         )}
       </div>
     </div>

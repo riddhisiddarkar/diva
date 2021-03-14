@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import "./App.css";
 import AppRouter from "./Router/AppRouter";
 import { auth } from "./firebase";
-import { selectUser, login } from "./features/appSlice";
+import { selectUser, login, logout } from "./features/appSlice";
 import { useSelector } from "react-redux";
 
 function App() {
@@ -21,6 +21,8 @@ function App() {
             displayName: authUser.displayName,
           })
         );
+      } else {
+        dispatch(logout());
       }
     });
   }, [dispatch]);

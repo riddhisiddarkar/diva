@@ -3,6 +3,7 @@ import React from "react";
 import styles from "./Sidebar.module.css";
 import MenuIcon from "@material-ui/icons/Menu";
 import SidebarBigComponent from "./SidebarBigComponent/SidebarBigComponent";
+import { auth } from "../../firebase";
 
 const Sidebar = ({ open, sidebarclose }) => {
   return (
@@ -11,7 +12,7 @@ const Sidebar = ({ open, sidebarclose }) => {
         <div className={styles.sidebar}>
           <div className={styles.sidebar_name_section1}>
             <MenuIcon className={styles.sidebar_menuicon} />
-            <h2 className={styles.sideapp_name}>App Name</h2>
+            <h2 className={styles.sideapp_name}>Diva</h2>
           </div>
           <div className={styles.sidebar_name_section2}>
             {/* <p>Username</p> */}
@@ -41,6 +42,15 @@ const Sidebar = ({ open, sidebarclose }) => {
               type="knowledge"
               sidebarclose={sidebarclose}
             />
+            <div
+              className={styles.logout}
+              onClick={() => {
+                auth.signOut();
+                console.log("called");
+              }}
+            >
+              Logout
+            </div>
           </div>
         </div>
       )}

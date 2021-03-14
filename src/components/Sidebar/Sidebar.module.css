@@ -36,6 +36,11 @@
   margin-top: -5px;
   color: white;
 }
+.logout {
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
 .sidebar_name_section2 {
   border-bottom: 1px solid white;
 }

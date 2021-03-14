@@ -17,7 +17,28 @@
   border-radius: 20px;
   margin-top: 20px;
 }
-
+.best {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+.heading {
+  font-size: 50px;
+  margin: 30px auto;
+  text-align: center;
+}
+.feature {
+  padding: 20px;
+  text-align: center;
+}
+.feature > img {
+  width: 200px;
+}
+.footer {
+  text-align: center;
+  background-color: var(--themeColor);
+  color: white;
+  padding: 20px;
+}
 @media (max-width: 1040px) {
   .homepage_details > h2 {
     font-size: 34px;
