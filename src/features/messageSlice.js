@@ -3,20 +3,20 @@ import { createSlice } from "@reduxjs/toolkit";
 export const messageSlice = createSlice({
   name: "message",
   initialState: {
-    id: null,
+    value: null,
   },
   reducers: {
     addMessage: (state, action) => {
-      state.id = action.payload;
+      state.value = action.payload;
     },
     removeMessage: (state) => {
-      state.id = null;
+      state.value = null;
     },
   },
 });
 
-export const { login, logout } = messageSlice.actions;
+export const { addMessage, removeMessage } = messageSlice.actions;
 
-export const selectUser = (state) => state.message.id;
+export const selectMessage = (state) => state.message.value;
 
 export default messageSlice.reducer;

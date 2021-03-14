@@ -17,6 +17,6 @@ export const channelSlice = createSlice({
 
 export const { addChannel, removeChannel } = channelSlice.actions;
 
-export const selectUser = (state) => state.channel.value;
+export const selectChannel = (state) => state.channel.value;
 
 export default channelSlice.reducer;

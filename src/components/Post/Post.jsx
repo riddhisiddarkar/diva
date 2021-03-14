@@ -1,18 +1,28 @@
 import React from "react";
 import ForumRoundedIcon from "@material-ui/icons/ForumRounded";
+import { useDispatch } from "react-redux";
 
 import styles from "./Post.module.css";
+import { addMessage } from "../../features/messageSlice";
 
-const Post = () => {
+const Post = ({ data }) => {
+  const dispatch = useDispatch();
+  const enterdiscussion = () => {
+    dispatch(
+      addMessage({
+        id: data.id,
+        message: data.data,
+      })
+    );
+  };
   return (
     <>
       <div className={styles.post}>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae cumque
-          iure explicabo blanditiis magni voluptatum, adipisci vitae veritatis
-          saepe harum, inventore non beatae nihil itaque.
-        </p>
-        <ForumRoundedIcon className={styles.chat_icon} />
+        <p>{data.data.message}</p>
+        <ForumRoundedIcon
+          className={styles.chat_icon}
+          onClick={enterdiscussion}
+        />
         <p className={styles.timestamp}>a few moments ago</p>
       </div>
     </>

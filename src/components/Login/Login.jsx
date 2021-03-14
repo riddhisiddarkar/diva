@@ -16,7 +16,7 @@ const Login = () => {
   const history = useHistory();
 
   useEffect(() => {
-    if (user) history.push("/");
+    if (user) history.push("/app");
   }, [history, user]);
 
   const loginuser = (e) => {

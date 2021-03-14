@@ -17,15 +17,18 @@ const Sidebar = () => {
       <div>
         <SidebarBigComponent
           title="Lets Discuss "
-          data={["Mental", "Sexual"]}
+          data={["mental", "sexual"]}
+          type="discussion"
         />
         <SidebarBigComponent
           title="Lets Celebrate "
-          data={["Yourself", "Others"]}
+          data={["yourself", "others"]}
+          type="celebration"
         />
         <SidebarBigComponent
           title="Lets Disect  "
-          data={["Gynac", "Therapist", "Pediatrician"]}
+          data={["gynac", "therapist", "pediatrician"]}
+          type="disect"
         />
       </div>
     </div>

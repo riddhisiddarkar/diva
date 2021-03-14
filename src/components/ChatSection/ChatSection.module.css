@@ -5,7 +5,7 @@
 }
 .chatSection_navbar {
   margin: 0;
-  background-color: #f73378;
+  background-color: #1d1da1;
   height: 50px;
   display: flex;
   align-items: center;
@@ -13,6 +13,10 @@
   border-bottom: 1px solid white;
   color: white;
   justify-content: space-between;
+}
+.chatSection_navbar a {
+  text-decoration: none;
+  color: white;
 }
 .chats {
   flex: 1;

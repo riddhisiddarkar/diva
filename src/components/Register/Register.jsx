@@ -17,7 +17,7 @@ const Register = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   useEffect(() => {
-    if (user) history.push("/");
+    if (user) history.push("/app");
   }, [history, user]);
 
   const registeruser = (e) => {
