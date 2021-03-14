@@ -25,6 +25,7 @@ const AddAPost = () => {
         .add({
           message: message,
           timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+          id: user.displayName,
         })
         .then((res) => {
           console.log("Successfully added the post ");

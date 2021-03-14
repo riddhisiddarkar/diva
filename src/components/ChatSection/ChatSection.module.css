@@ -19,7 +19,15 @@
   color: white;
 }
 .chats {
-  flex: 1;
   object-position: center center;
   background-color: aliceblue;
+  overflow-y: scroll;
+  height: calc(100vh - 51px);
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.chats::-webkit-scrollbar {
+  display: none;
 }
