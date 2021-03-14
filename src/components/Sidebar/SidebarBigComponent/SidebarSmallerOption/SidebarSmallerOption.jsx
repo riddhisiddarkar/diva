@@ -1,17 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import styles from "./SidebarSmallerOption.module.css";
-import { addChannel } from "../../../../features/channelSlice";
+import { addChannel, selectChannel } from "../../../../features/channelSlice";
 
 const SidebarSmallerOption = ({ data, type }) => {
   const dispatch = useDispatch();
+  const channel = useSelector(selectChannel);
 
   return (
     <div className={styles.sidebarsmalleroption}>
       {data?.map((d) => (
         <Link
+          style={{
+            background: `${channel?.name == d ? "aliceblue" : ""}`,
+            color: `${channel?.name == d ? "#1d1da1" : ""}`,
+          }}
           onClick={() => {
             dispatch(
               addChannel({

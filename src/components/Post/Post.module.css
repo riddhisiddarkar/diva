@@ -13,6 +13,7 @@
 .chat_icon {
   color: #222261;
   margin-top: 10px;
+  cursor: pointer;
 }
 .post > p {
   font-size: 13px;

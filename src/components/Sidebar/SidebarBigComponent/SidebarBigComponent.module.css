@@ -6,6 +6,7 @@
   display: flex;
   color: white;
   align-items: center;
+  margin-bottom: 10px;
 }
 .sidebarbigoption > div > p {
   flex: 1;

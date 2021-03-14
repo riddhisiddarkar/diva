@@ -8,7 +8,7 @@ const Advices = ({ comments, like, dislike }) => {
   return (
     <div className={styles.advices}>
       {comments?.map((comment) => (
-        <Advice data={comment} like={like} dislike={dislike} />
+        <Advice data={comment} like={like} dislike={dislike} key={comment.id} />
       ))}
     </div>
   );
