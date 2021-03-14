@@ -23,7 +23,7 @@ const Article = ({ article }) => {
         2021{" "}
       </p>
       <div className={styles.claps}>
-        <img src={clap} />
+        <img src={clap} alt="claps" />
         <p>{article?.data.claps}</p>
       </div>
       <Button

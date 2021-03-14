@@ -14,8 +14,8 @@ const SidebarSmallerOption = ({ data, type, sidebarclose }) => {
       {data?.map((d) => (
         <Link
           style={{
-            background: `${channel?.name == d ? "aliceblue" : ""}`,
-            color: `${channel?.name == d ? "#1d1da1" : ""}`,
+            background: `${channel?.name === d ? "aliceblue" : ""}`,
+            color: `${channel?.name === d ? "#1d1da1" : ""}`,
           }}
           onClick={() => {
             dispatch(

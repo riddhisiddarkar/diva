@@ -5,14 +5,12 @@ import Article from "./Article/Article";
 import styles from "./Articles.module.css";
 import { selectArticle } from "../../features/articleSlice";
 import FullPageArticle from "./FullPageArticle/FullPageArticle";
-import { selectMessage } from "../../features/messageSlice";
 import { selectChannel } from "../../features/channelSlice";
 import { db } from "../../firebase";
 
 const Articles = ({ articles }) => {
   const article = useSelector(selectArticle);
   const channel = useSelector(selectChannel);
-  const message = useSelector(selectMessage);
 
   const addclap = (id) => {
     db.collection(channel?.type)
