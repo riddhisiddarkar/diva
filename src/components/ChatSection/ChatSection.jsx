@@ -10,6 +10,7 @@ import { db } from "../../firebase";
 import { Link } from "react-router-dom";
 import Articles from "../Articles/Articles";
 import DoctorContacts from "../DoctorContacts/DoctorContacts";
+import KnowYourBody from "../KnowYourBody/KnowYourBody";
 
 const ChatSection = ({ sidebarclose }) => {
   const channel = useSelector(selectChannel);
@@ -57,6 +58,8 @@ const ChatSection = ({ sidebarclose }) => {
           <Articles articles={posts} />
         ) : channel?.type == "disect" ? (
           <DoctorContacts />
+        ) : channel?.type == "knowledge" ? (
+          <KnowYourBody />
         ) : (
           <></>
         )}

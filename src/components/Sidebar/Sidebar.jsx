@@ -35,6 +35,12 @@ const Sidebar = ({ open, sidebarclose }) => {
               type="disect"
               sidebarclose={sidebarclose}
             />
+            <SidebarBigComponent
+              title="Lets Learn  "
+              data={["Know your body"]}
+              type="knowledge"
+              sidebarclose={sidebarclose}
+            />
           </div>
         </div>
       )}
