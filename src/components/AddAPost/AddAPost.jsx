@@ -12,6 +12,7 @@ import { db } from "../../firebase";
 
 const AddAPost = () => {
   const [message, setMessage] = useState("");
+  const [shortdesc, setShortdesc] = useState("");
   const channel = useSelector(selectChannel);
   const user = useSelector(selectUser);
   const history = useHistory();
@@ -19,14 +20,19 @@ const AddAPost = () => {
   const addpost = (e) => {
     e.preventDefault();
     if (channel) {
+      let newpost = {
+        message: message,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+        id: user.displayName,
+      };
+      if (channel?.name) {
+        newpost["shortdescription"] = shortdesc;
+        newpost["claps"] = 0;
+      }
       db.collection(channel?.type)
         .doc(channel?.name)
         .collection(channel?.name)
-        .add({
-          message: message,
-          timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-          id: user.displayName,
-        })
+        .add(newpost)
         .then((res) => {
           console.log("Successfully added the post ");
           console.log(res);
@@ -61,8 +67,16 @@ const AddAPost = () => {
     <div className={styles.addapost}>
       <img src={addpic} className={styles.addpic} alt="addpost" />
       <form>
+        {channel?.name === "yourself" && (
+          <textarea
+            className={styles.textarea1}
+            placeholder="Short description in about 20 words"
+            value={shortdesc}
+            onChange={(e) => setShortdesc(e.target.value)}
+          />
+        )}
         <textarea
-          placeholder="Type here"
+          placeholder="Type incident here in about 50-60 word"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
         />

@@ -15,6 +15,10 @@
   border: 1px solid var(--themeColor);
   width: 400px;
   outline: none;
+  margin-bottom: 20px;
+}
+.textarea1 {
+  height: 50px !important;
 }
 .addapost > form {
   display: flex;

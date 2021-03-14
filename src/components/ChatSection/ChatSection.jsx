@@ -39,7 +39,7 @@ const ChatSection = ({ sidebarclose }) => {
           onClick={() => sidebarclose(true)}
         />
         <p>{channel?.name}</p>
-        {channel && (
+        {(channel?.type === "discussion" || channel?.name === "yourself") && (
           <Link to="/addpost">
             <AddBoxRoundedIcon />
           </Link>

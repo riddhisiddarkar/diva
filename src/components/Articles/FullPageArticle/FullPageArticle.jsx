@@ -5,14 +5,14 @@ import styles from "./FullPageArticle.module.css";
 import { selectArticle, removearticle } from "../../../features/articleSlice";
 import Button from "../../../UI/Button/Button";
 
-const FullPageArticle = () => {
+const FullPageArticle = ({ addclap }) => {
   const article = useSelector(selectArticle);
   const dispatch = useDispatch();
   return (
     <div className={styles.fullpagearticle}>
       <div className={styles.username}>
         <p className={styles.bolder}>By:</p>
-        <p>username</p>
+        <p>{article?.data.id}</p>
       </div>
       <div className={styles.timestamp}>
         <p className={styles.bolder}>Date:</p>
@@ -20,23 +20,13 @@ const FullPageArticle = () => {
       </div>
       <div className={styles.title}>
         <p className={styles.bolder}>Title:</p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-          laborum inventore ab, quis possimus molestias dignissimos itaque omnis
-          iusto atque.
-        </p>
+        <p>{article?.data.shortdescription}</p>
       </div>
       <div className={styles.content}>
         <p className={styles.bolder}>Story:</p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
-          laborum eius veniam? Itaque doloribus re prehenderit perferendis
-          cumque totam? Eum porro quo nobis, tempore perspiciatis eveniet eius
-          voluptatem fugiat beatae officia cumque vitae hic in suscipit
-          eligendi. Quasi explicabo reprehenderit quae! Animi quod, accusamus ex
-          dicta qui voluptatum quas culpa ab!
-        </p>
+        <p>{article?.data.message}</p>
       </div>
+      <Button title="Clap!" onclick={() => addclap(article?.id)} />
       <Button title="Done!" onclick={() => dispatch(removearticle())} />
     </div>
   );
