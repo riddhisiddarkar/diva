@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import AddAPost from "../components/AddAPost/AddAPost";
+import FullPageArticle from "../components/Articles/FullPageArticle/FullPageArticle";
 import Forum from "../components/Forum/Forum";
 import Home from "../components/Home/Home";
 import Login from "../components/Login/Login";
@@ -28,6 +29,9 @@ const AppRouter = () => {
         </Route>
         <Route path="/addpost">
           <AddAPost />
+        </Route>
+        <Route path="/app/articles">
+          <FullPageArticle />
         </Route>
       </Switch>
     </Router>

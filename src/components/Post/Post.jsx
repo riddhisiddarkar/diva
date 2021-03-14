@@ -22,6 +22,7 @@ const Post = ({ data }) => {
   return (
     <>
       <div className={styles.post}>
+        <p className={styles.username}>{data?.data.id}</p>
         <p>{data.data.message}</p>
         <ForumRoundedIcon
           className={styles.chat_icon}

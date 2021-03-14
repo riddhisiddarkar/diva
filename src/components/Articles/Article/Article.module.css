@@ -1,0 +1,22 @@
+.article {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0px 0px 5px #888888;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+}
+.article > h6 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.article > p {
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+.dateandtime {
+}

@@ -14,10 +14,12 @@
   color: #222261;
   margin-top: 10px;
   cursor: pointer;
+  margin-left: 20px;
 }
 .post > p {
   font-size: 13px;
   color: #222261;
+  margin-left: 20px;
 }
 .timestamp {
   position: absolute;
@@ -25,4 +27,10 @@
   right: 10px;
   color: #ab003c !important;
   font-size: 10px !important;
+}
+.username {
+  font-size: 10px !important;
+  margin-bottom: 5px;
+  text-decoration: underline;
+  margin-left: 0px !important;
 }
