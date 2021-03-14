@@ -1,0 +1,16 @@
+.fullpagearticle {
+  padding: 20px;
+}
+.bolder {
+  font-weight: bolder;
+  width: 100px;
+  margin-left: 0px !important;
+}
+.fullpagearticle > div {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+}
+.fullpagearticle > div > p {
+  margin-left: 20px;
+}
