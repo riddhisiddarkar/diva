@@ -9,6 +9,7 @@ import { selectChannel } from "../../features/channelSlice";
 import { db } from "../../firebase";
 import { Link } from "react-router-dom";
 import Articles from "../Articles/Articles";
+import DoctorContacts from "../DoctorContacts/DoctorContacts";
 
 const ChatSection = ({ sidebarclose }) => {
   const channel = useSelector(selectChannel);
@@ -30,7 +31,7 @@ const ChatSection = ({ sidebarclose }) => {
         );
     }
   }, [channel]);
-
+  console.log(posts);
   return (
     <div className={styles.chatSection}>
       <div className={styles.chatSection_navbar}>
@@ -46,14 +47,16 @@ const ChatSection = ({ sidebarclose }) => {
         )}
       </div>
       <div className={styles.chats}>
-        {channel?.type === "discussion" ? (
+        {channel?.type == "discussion" ? (
           <>
             {posts.map((post) => (
               <Post data={post} key={post.id} />
             ))}
           </>
-        ) : channel?.type === "celebration" ? (
+        ) : channel?.type == "celebration" ? (
           <Articles articles={posts} />
+        ) : channel?.type == "disect" ? (
+          <DoctorContacts />
         ) : (
           <></>
         )}

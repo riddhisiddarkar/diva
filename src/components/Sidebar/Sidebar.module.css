@@ -42,5 +42,7 @@
 @media (max-width: 600px) {
   .sidebar {
     width: 100%;
+    position: fixed;
+    z-index: 200;
   }
 }
