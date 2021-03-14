@@ -1,3 +1,10 @@
 .advices {
   flex: 1;
+  overflow-y: scroll;
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.advices::-webkit-scrollbar {
+  display: none;
 }

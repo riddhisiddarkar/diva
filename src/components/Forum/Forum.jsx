@@ -18,11 +18,8 @@ const Forum = () => {
   const channel = useSelector(selectChannel);
   const message = useSelector(selectMessage);
   const history = useHistory();
+  const [comments, setComments] = useState([]);
   const [input, setInput] = useState("");
-
-  console.log(user);
-  console.log(message);
-  console.log(channel);
 
   const addcomment = (e) => {
     e.preventDefault();
@@ -50,8 +47,80 @@ const Forum = () => {
   };
   useEffect(() => {
     if (!message) history.push("/app");
-  }, [message]);
-
+    else {
+      db.collection(channel?.type)
+        .doc(channel?.name)
+        .collection(channel?.name)
+        .doc(message?.id)
+        .collection("comments")
+        .orderBy("timestamp")
+        .onSnapshot((snapshot) =>
+          setComments(
+            snapshot.docs.map((snap) => ({
+              id: snap.id,
+              data: snap.data(),
+            }))
+          )
+        );
+    }
+  }, [message, channel?.type, history, channel?.name]);
+  const addlike = (id) => {
+    db.collection(channel?.type)
+      .doc(channel?.name)
+      .collection(channel?.name)
+      .doc(message?.id)
+      .collection("comments")
+      .doc(id)
+      .get()
+      .then((res) => {
+        db.collection(channel?.type)
+          .doc(channel?.name)
+          .collection(channel?.name)
+          .doc(message?.id)
+          .collection("comments")
+          .doc(id)
+          .update({ ...res.data(), likes: res.data().likes + 1 })
+          .then((r) => {
+            console.log(r);
+            console.log("Successfully added data");
+          })
+          .catch((err) => {
+            console.log("There is an error here in adding likes");
+            console.log(err);
+          });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  const adddislike = (id) => {
+    db.collection(channel?.type)
+      .doc(channel?.name)
+      .collection(channel?.name)
+      .doc(message?.id)
+      .collection("comments")
+      .doc(id)
+      .get()
+      .then((res) => {
+        db.collection(channel?.type)
+          .doc(channel?.name)
+          .collection(channel?.name)
+          .doc(message?.id)
+          .collection("comments")
+          .doc(id)
+          .update({ ...res.data(), dislikes: res.data().dislikes + 1 })
+          .then((r) => {
+            console.log("Successfully added data");
+          })
+          .catch((err) => {
+            console.log("There is an error here in adding likes");
+            console.log(err);
+          });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
     <div className={styles.forum}>
       <div className={styles.forum_navbar}>
@@ -62,7 +131,7 @@ const Forum = () => {
         <p className={styles.forum_channel_name}>{channel?.type}</p>
       </div>
       <MainMessage data={message?.message} />
-      <Advices />
+      <Advices comments={comments} like={addlike} dislike={adddislike} />
       <form className={styles.textinput} onSubmit={addcomment}>
         <input
           type="text"
