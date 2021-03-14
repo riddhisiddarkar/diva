@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import styles from "./SidebarSmallerOption.module.css";
 import { addChannel, selectChannel } from "../../../../features/channelSlice";
 
-const SidebarSmallerOption = ({ data, type }) => {
+const SidebarSmallerOption = ({ data, type, sidebarclose }) => {
   const dispatch = useDispatch();
   const channel = useSelector(selectChannel);
 
@@ -24,6 +24,7 @@ const SidebarSmallerOption = ({ data, type }) => {
                 name: d,
               })
             );
+            sidebarclose(false);
           }}
         >
           {d}

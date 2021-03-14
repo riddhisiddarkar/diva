@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import AddBoxRoundedIcon from "@material-ui/icons/AddBoxRounded";
 import { useSelector } from "react-redux";
+import KeyboardBackspaceOutlinedIcon from "@material-ui/icons/KeyboardBackspaceOutlined";
 
 import styles from "./ChatSection.module.css";
 import Post from "../Post/Post";
@@ -8,7 +9,7 @@ import { selectChannel } from "../../features/channelSlice";
 import { db } from "../../firebase";
 import { Link } from "react-router-dom";
 
-const ChatSection = () => {
+const ChatSection = ({ sidebarclose }) => {
   const channel = useSelector(selectChannel);
   const [posts, setPosts] = useState([]);
   useEffect(() => {
@@ -30,7 +31,11 @@ const ChatSection = () => {
   return (
     <div className={styles.chatSection}>
       <div className={styles.chatSection_navbar}>
-        <p>Section Name</p>
+        <KeyboardBackspaceOutlinedIcon
+          className={styles.backbtn}
+          onClick={() => sidebarclose(true)}
+        />
+        <p>{channel?.name}</p>
         <Link to="/addpost">
           <AddBoxRoundedIcon />
         </Link>
