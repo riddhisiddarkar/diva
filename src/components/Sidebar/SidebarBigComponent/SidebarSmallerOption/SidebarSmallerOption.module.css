@@ -12,7 +12,9 @@
   padding-left: 40px;
   width: 100%;
   text-transform: capitalize;
+  margin-bottom: 1px;
 }
 .sidebarsmalleroption a:hover {
-  background-color: #ab003c;
+  background-color: aliceblue;
+  color: #1d1da2;
 }
