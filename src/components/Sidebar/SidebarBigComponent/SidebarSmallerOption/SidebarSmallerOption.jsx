@@ -24,7 +24,7 @@ const SidebarSmallerOption = ({ data, type, sidebarclose }) => {
                 name: d,
               })
             );
-            sidebarclose(false);
+            if (window.innerWidth < 700) sidebarclose(false);
           }}
         >
           {d}
