@@ -1,4 +1,10 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+#### Inspiration
+Women go through a lot and usually don't speak much about it. They usually tend to keep it to themselves and continue to suffer. This is a web based platform to help women share thier feelings out there get help, give opinions together solve the issue. Building a community of women helping each other in all forms of lives by shares some of the positive stories and impact that they have created.
+
+## Tech Stack: React and Firebase
+
+#### To start the project
+Navigate to the project and run npm install
 
 ## Available Scripts
 
